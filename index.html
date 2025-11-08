@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Riina Sasaki — 3D Student Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- model-viewer web component for glTF viewing -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body class="theme-root">
+  <header class="site-header">
+     <aside class="sidebar">
+  
+  <div class="sidebar-top">
+     <div class="sidebar-header">
+    <img src="assets/images/Jellyfishlogo.png" alt="Riina Sasaki Logo" class="sidebar-logo">
+    <h1 class="sidebar-title">Riina Sasaki</h1>
+  </div>
+    <nav>
+      <a href="works.html" class="nav-link">WORKS</a>
+      <a href="about.html" class="nav-link">ABOUT ME</a>
+    </nav>
+  </div>
+
+  <div class="sidebar-bottom">
+    <a href="contact.html" class="nav-link">CONTACT</a>
+     <p class="muted">Email: <a href="mailto:your.email@example.com">riinasasaki789@gmail.com</a></p>
+      <p>Phone number: <a href="">0412 885 803</a></p>
+  </div>
+</aside>
+
+  </aside>
+  </header>
+
+  <main class="home-main container-grid">
+    <section class="hero">
+      
+
+      <!-- Replace src with your glTF / GLB file in assets -->
+      <model-viewer id="main-model"
+        src="assets/works/nameintermodel.glb"
+        alt="Interactive 3D model"
+        camera-controls
+        exposure="0.5"
+        auto-rotate
+        poster="assets/model-poster.jpg"
+     
+          shadow-intensity="1"
+  exposure="1"
+  environment-image="neutral"
+  style="background-color: black; width: 75vw; height: 90vh; right: -350px;">
+        
+      </model-viewer>
+
+      <div class="model-controls">
+        <button id="toggle-rotate" class="btn">Pause Rotation</button>
+        <label class="small">Exposure
+          <input id="exposure" type="range" min="0.2" max="2" step="0.1" value="1">
+        </label>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Riina Sasaki — Student Portfolio</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
+
