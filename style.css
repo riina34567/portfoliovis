@@ -49,6 +49,16 @@ body {
 	overflow-x: hidden;
 }
 
+.home-text {
+	  position: absolute;
+  top: 50%; /* adjust position */
+  left: 50%;
+  transform: translate(-50%, -50%); /* centers the image */
+  width: 500px; /* adjust size */
+  height: auto;
+  pointer-events: none; /* allows interaction with model below */
+  z-index: 10;
+}
 /* ---------- SIDEBAR ---------- */
 
 .sidebar-header {
