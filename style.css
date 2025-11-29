@@ -448,6 +448,7 @@ h1 {
 }
 
 /* Information display area */
+
 .info-container {
 	background: white;
 	border-radius: 0px;
@@ -532,52 +533,64 @@ display: flex;
   transition: transform 0.3s ease;
 }
 
-.video-gallery {
+.video-layout-fix {
+  width: 100%;
   display: flex;
-  gap: 30px;
- border-radius: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #000; /* black page style */
-  color: white;
+  justify-content: center; 
 }
 
+.video-wrapper {
+  width: 100%;
+  max-width: 1600px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.main-video iframe,
+.main-video video {
+ 
+  aspect-ratio: 16/9;
+}
+
+
+/* Main video container */
 .main-video {
   flex: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-width: 900px;
 }
 
-.main-video video {
+/* NEW — style for iframe instead of <video> */
+.main-video iframe {
   width: 100%;
-  max-height: 500px;
-  border: 1px solid white;
-  border-radius: 8px;
+  aspect-ratio: 16 / 9;    /* FORCE YouTube horizontal shape */
+  border-radius: 12px;
+  border: 2px solid white;
 }
 
+/* Optional description under the big video */
 .video-info {
   margin-top: 15px;
   text-align: left;
   width: 100%;
 }
 
+/* Scrollable thumbnail column */
 .video-thumbnails {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  overflow-y: auto;
-  max-height: 500px;
+ flex: 1 !important;
+  min-width: 200px; /* ensures there's room on the side */
+  max-width: 320px;
 }
 
+/* Individual thumbnail */
 .thumb {
   cursor: pointer;
   border: 1px solid white;
   border-radius: 6px;
   overflow: hidden;
   transition: transform 0.2s ease, opacity 0.2s ease;
+  
 }
 
 .thumb:hover {
@@ -595,6 +608,7 @@ display: flex;
   margin: 5px 0;
   font-size: 0.9rem;
 }
+
 
 .video-container {
   position: relative;
@@ -701,6 +715,14 @@ display: flex;
   margin-bottom: 50px; /* space between title and content */
 }
 
+.process-text2 h3 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #000000; /* black if white background */
+  
+  margin-bottom: 50px; /* space between title and content */
+}
+
 .process-content {
   display: flex;
   align-items: flex-start;
@@ -732,6 +754,41 @@ display: flex;
   margin-bottom: 40px; /* adds gaps between paragraphs */
   max-width: 700px;
 }
+
+.process-step2 {
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* space between image and text */
+  margin: 60px auto;
+  max-width: 1000px;
+  
+  flex-wrap: wrap; /* makes it stack on small screens */
+}
+
+.process-text2 {
+	align-items: flex-start;
+  flex: 1;
+  min-width: 100px;
+  transform: translateY(-10px); 
+}
+.process-text2 p {
+   color: #000000;
+  line-height: 1.6;
+  margin-bottom: 40px; /* adds gaps between paragraphs */
+  max-width: 700px;
+ 
+}
+
+.process-image2 img {
+ width: 400px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  margin-left: -10px; 
+}
+
 
 .processblob-images img {
   width: 800px;

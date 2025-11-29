@@ -80,43 +80,17 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('All setup complete!');
 });
 
-const thumbs = document.querySelectorAll('.thumb');
-const mainVideo = document.getElementById('featuredVideo');
-
-thumbs.forEach(thumb => {
-  thumb.addEventListener('click', () => {
-    const newSrc = thumb.getAttribute('data-video');
-    mainVideo.querySelector('source').setAttribute('src', newSrc);
-    mainVideo.load();
-    mainVideo.play();
-  });
-});
-
-
-
-// Select all galleries on the page
-const galleries = document.querySelectorAll('.video-gallery');
-
-galleries.forEach(gallery => {
-  const mainVideo = gallery.querySelector('.main-video video');
-  const thumbs = gallery.querySelectorAll('.video-thumbnails .thumb');
-
-  thumbs.forEach(thumb => {
+// ===== UNIVERSAL VIDEO GALLERY SCRIPT =====
+document.querySelectorAll('.video-thumbnails .thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
-      const newSrc = thumb.dataset.video;
-      if (newSrc) {
-        // Replace video source
-        mainVideo.querySelector('source').src = newSrc;
-        mainVideo.load();
-        mainVideo.play();
-
-        // Optional: update active state for thumbnails
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-      }
+        const videoUrl = thumb.getAttribute('data-video');
+        const wrapper = thumb.closest('.video-wrapper');
+        const iframe = wrapper.querySelector('iframe');
+        iframe.src = videoUrl;
     });
-  });
 });
+
+
 
 
 
