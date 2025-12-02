@@ -84,6 +84,13 @@ body {
   pointer-events: none; /* allows interaction with model below */
   z-index: 10;
 }
+
+.instagram-link {
+  color: #ade4ee; /* Instagram's brand color */
+  text-decoration: none;
+  font-size: 18px;
+}
+
 /* ---------- SIDEBAR ---------- */
 
 .sidebar-header {
